@@ -1,5 +1,5 @@
 <!-- Write your README.md file. Build something amazing! This README.md template can guide you to build your project documentation, but feel free to modify it as you wish 🥰 -->
-# **CesiumIon Ruby**
+# **Cesium Ion Ruby**
 
 ## **About**
 
