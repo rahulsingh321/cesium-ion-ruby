@@ -1,6 +1,8 @@
 <!-- Write your README.md file. Build something amazing! This README.md template can guide you to build your project documentation, but feel free to modify it as you wish 🥰 -->
 # **Cesium Ion Ruby**
+This gem wraps the Cesium Ion REST APIs for convenient access from ruby applications.
 
+Cesium Ion REST API documentation - https://cesium.com/learn/ion/rest-api
 ## **About**
 
 A ruby gem that provides ability to implement the [cesium ion rest apis](https://cesium.com/learn/ion/rest-api/).
