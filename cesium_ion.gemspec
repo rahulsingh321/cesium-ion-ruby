@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.files     = `git ls-files`.split("\n").reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
 
   s.add_dependency 'aws-sdk-s3', '~> 1'
+  s.add_development_dependency 'rails', '>= 6.0'
 end
