@@ -1,3 +1,5 @@
+require_relative '../base'
+
 module CesiumIon
   module Assets
     class Create < CesiumIon::Base
