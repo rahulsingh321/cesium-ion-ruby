@@ -122,7 +122,7 @@ module CesiumIon
     end
 
     def valid_for_execution
-      @authorization_token.to_s.present? && @bucket.to_s.present? && @access_key_id.to_s.present? && @secret_access_key.to_s.present?
+      @authorization_token.to_s.present?
     end
 
     def update_cesium_asset_status!

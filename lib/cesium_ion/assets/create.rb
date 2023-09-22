@@ -3,8 +3,10 @@ module CesiumIon
     class Create < CesiumIon::Base
 
       Params = Struct.new(
-        :center_coordinates,
-        :height,
+        :name,
+        :type,
+        :description,
+        :source_type,
         keyword_init: true
       )
 
@@ -21,23 +23,21 @@ module CesiumIon
 
       def payload
         payload = {
-          "name": "3D-Tile",
-          "description": "File to convert to 3d",
-          "type": "3DTILES",
+          "name": @params.name.to_s,
+          "type": @params.type.to_s,
+          "description": @params.description.to_s,
           "options": {
-            "sourceType": "3D_CAPTURE",
-            "geometryCompression": "NONE"
+            "sourceType": @params.source_type,
           }
         }
-        if false #@params.center_coordinates
-          payload[:options]["position"] = [
-            @params.center_coordinates[:lng],
-            @params.center_coordinates[:lat],
-            @params.height
-          ]
-        end
 
         payload
+      end
+
+      def validate
+        @errors['name'] << 'Can\'t be blank' if @params.name.to_s.empty?
+        @errors['type'] << 'Can\'t be blank' if @params.type.to_s.empty?
+        @errors['source_type'] << 'Can\'t be blank' if @params.source_type.to_s.empty?
       end
 
       def api_path

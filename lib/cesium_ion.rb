@@ -1,3 +1,4 @@
+require 'cesium_ion/base'
 require "cesium_ion/engine"
 
 require 'cesium_ion/base'
