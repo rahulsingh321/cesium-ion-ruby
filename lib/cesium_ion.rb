@@ -185,11 +185,5 @@ module CesiumIon
   end
 end
 
-module CesiumIon
-  def self.configure(config={})
-    CesiumIon::Config.configure(config)
-  end
-end
-
 # Alias the module for those looking to use the stylized name CesiumIon
 CesiumIon = CesiumIon
