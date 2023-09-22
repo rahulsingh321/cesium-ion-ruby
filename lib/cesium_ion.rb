@@ -1,5 +1,6 @@
 require "cesium_ion/engine"
 
+require 'cesium_ion/base'
 require 'cesium_ion/assets/create'
 require 'cesium_ion/assets/upload'
 require 'cesium_ion/assets/complete'
@@ -41,6 +42,7 @@ module CesiumIon
 
     def initialize(options={})
       self.auth_token = options['auth_token']
+
       self.bucket = options['bucket']
       self.access_key_id = options['access_key_id']
       self.secret_access_key = options['secret_access_key']
