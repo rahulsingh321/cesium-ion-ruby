@@ -44,26 +44,26 @@ module CesiumIon
           "options": @params.options
         }
 
-        payload
+        payload.with_indifferent_access
       end
 
       def validate
         @errors['name'] << 'Can\'t be blank' if @params.name.to_s.empty?
         @errors['type'] << 'Can\'t be blank' if @params.type.to_s.empty?
-        @errors['source_type'] << 'Can\'t be blank' if @params.source_type.to_s.empty?
-        @errors['source_type'] << 'Invaid options parameter' unless valid_options_parameter(payload)
+        @errors['source_type'] << 'Can\'t be blank' if @params.options.with_indifferent_access.dig(:sourceType).to_s.empty?
+        @errors['options'] << 'Invaid options parameter' unless valid_options_parameter(payload)
       end
 
       def valid_options_parameter(payload)
-        source_type = payload['options']['sourceType']
+        source_type = payload.dig('options','sourceType')
         valid = false
 
         if ALLOWED_PARAMETERS.key?(source_type)
           user_parameters = payload['options'].keys
           user_parameters = user_parameters - ['sourceType']
-          allowed_parameters_for_source = ALLOWED_PARAMETERS[source_type]
+          allowed_parameters = ALLOWED_PARAMETERS[source_type]
 
-          valid = true if (user_parameters - allowed_parameters_for_source).empty?
+          valid = true if (user_parameters - allowed_parameters).empty?
         end
 
         valid
