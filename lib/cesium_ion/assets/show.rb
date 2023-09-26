@@ -1,10 +1,8 @@
 module CesiumIon
   module Assets
-    class Complete < CesiumIon::Base
-      ASSET_STATUS = 'COMPLETED'
-
+    class Show < CesiumIon::Base
       Params = Struct.new(
-        :response_data,
+        :asset_id,
         keyword_init: true
       )
 
@@ -20,19 +18,15 @@ module CesiumIon
       private
 
       def validate
-        @errors['response_data'] << 'Can\'t be blank' if @params.response_data.to_s.empty?
-      end
-
-      def endpoint
-        @params.response_data.with_indifferent_access.dig(:onComplete, :url)
+        @errors['asset_id'] << 'Can\'t be blank' if @params.asset_id.to_s.empty?
       end
 
       def api_path
-        ""
+        "/assets/#{@params.asset_id}"
       end
 
       def request_type
-        'POST'
+        'GET'
       end
     end
   end

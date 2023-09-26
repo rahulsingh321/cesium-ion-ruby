@@ -3,9 +3,19 @@ require "cesium_ion/engine"
 
 require 'cesium_ion/base'
 require 'cesium_ion/assets/create'
-require 'cesium_ion/assets/upload'
-require 'cesium_ion/assets/complete'
-require 'cesium_ion/assets/export'
+require 'cesium_ion/assets/index'
+require 'cesium_ion/assets/show'
+require 'cesium_ion/assets/update'
+require 'cesium_ion/assets/destroy'
+
+require 'cesium_ion/archieves/create'
+require 'cesium_ion/archieves/index'
+require 'cesium_ion/archieves/show'
+require 'cesium_ion/archieves/destroy'
+
+require 'cesium_ion/exports/create'
+require 'cesium_ion/exports/index'
+require 'cesium_ion/exports/show'
 
 
 module CesiumIon
