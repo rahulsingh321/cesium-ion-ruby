@@ -49,7 +49,7 @@ module CesiumIon
         when 'POST'
           request = Net::HTTP::Post.new(url)
         when 'PUT'
-          request = Net::HTTP::Put.new(url)
+          request = Net::HTTP::Patch.new(url)
         when 'DELETE'
           request = Net::HTTP::Delete.new(url)
         else

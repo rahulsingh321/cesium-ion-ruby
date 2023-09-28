@@ -6,6 +6,7 @@ module CesiumIon
         :name,
         :type,
         :description,
+        :attribution,
         :source_type,
         :options,
         keyword_init: true

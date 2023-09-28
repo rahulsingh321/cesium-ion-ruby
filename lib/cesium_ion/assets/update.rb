@@ -2,6 +2,9 @@ module CesiumIon
   module Assets
     class Update < CesiumIon::Base
       Params = Struct.new(
+        :name,
+        :description,
+        :attribution,
         :asset_id,
         keyword_init: true
       )
@@ -18,7 +21,19 @@ module CesiumIon
       private
 
       def validate
-        @errors['asset_id'] << 'Can\'t be blank' if @params.asset_id.to_s.empty?
+        if @params.name.to_s.empty? && @params.description.to_s.empty? && @params.attribution.to_s.empty?
+          @errors['parameters'] << 'Can\'t be blank please include either name, attribution and description'
+        end
+      end
+
+      def payload
+        payload = {
+          "name": @params.name.to_s,
+          "description": @params.description.to_s,
+          "attribution": @params.attribution.to_s
+        }
+
+        payload.with_indifferent_access
       end
 
       def api_path
