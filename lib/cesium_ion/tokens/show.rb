@@ -1,9 +1,8 @@
 module CesiumIon
-  module Archives
-    class Destroy < CesiumIon::Base
+  module Tokens
+    class Show < CesiumIon::Base
       Params = Struct.new(
-        :asset_id,
-        :archive_id,
+        :token_id,
         keyword_init: true
       )
 
@@ -19,17 +18,17 @@ module CesiumIon
       private
 
       def validate
-        @errors['asset_id'] << 'Can\'t be blank' if @params.asset_id.to_s.empty?
-        @errors['archive_id'] << 'Can\'t be blank' if @params.archive_id.to_s.empty?
+        @errors['token_id'] << 'Can\'t be blank' if @params.token_id.to_s.empty?
       end
 
       def api_path
-        "/assets/#{@params.asset_id}/archives/#{@params.archive_id}"
+        "tokens/#{@params.token_id}"
       end
 
       def request_type
-        'DELETE'
+        'GET'
       end
+
     end
   end
 end

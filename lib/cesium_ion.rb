@@ -17,6 +17,11 @@ require 'cesium_ion/exports/create'
 require 'cesium_ion/exports/index'
 require 'cesium_ion/exports/show'
 
+require 'cesium_ion/tokens/create'
+require 'cesium_ion/tokens/index'
+require 'cesium_ion/tokens/show'
+require 'cesium_ion/tokens/destroy'
+
 
 module CesiumIon
   class Error < StandardError; end
