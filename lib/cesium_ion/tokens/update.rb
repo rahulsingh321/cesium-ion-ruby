@@ -1,10 +1,12 @@
 module CesiumIon
   module Tokens
-    class Create < CesiumIon::Base
-
+    class Update < CesiumIon::Base
       Params = Struct.new(
+        :token_id,
         :name,
         :scopes,
+        :asset_ids,
+        :allowed_urls,
         keyword_init: true
       )
 
@@ -21,18 +23,11 @@ module CesiumIon
 
       private
 
-      def payload
-        payload = {
-          "name": @params.name,
-          "scopes": @params.scopes
-        }
-
-        payload.with_indifferent_access
-      end
-
       def validate
-        @errors['scopes'] << 'Can\'t be blank' if @params.scopes.to_s.empty?
-        @errors['name'] << 'Can\'t be blank' if @params.name.to_s.empty?
+        if @params.token_id.to_s.empty? && @params.asset_ids.empty? && @params.scopes.empty? &&  @params.asset_ids.empty? && @params.allowed_urls
+          @erros['No parameter provided'] << "Atleast provide one of the following parameter for updating the token"
+        end
+
         @errors['scopes'] << 'Invaid scopes Provided' unless valid_scopes_parameter(@params.scopes)
       end
 
@@ -50,8 +45,17 @@ module CesiumIon
         valid
       end
 
+      def payload
+        {
+          "name": @params.name.to_s,
+          "assetIds": @params.asset_ids,
+          "scopes": @params.scopes,
+          "allowedUrls": @params.allowed_urls
+        }
+      end
+
       def api_path
-        "/tokens"
+        "/tokens/#{@params.token_id}"
       end
 
       def endpoint
@@ -59,7 +63,7 @@ module CesiumIon
       end
 
       def request_type
-        'POST'
+        'PUT'
       end
     end
   end

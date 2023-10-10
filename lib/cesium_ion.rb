@@ -21,6 +21,7 @@ require 'cesium_ion/tokens/create'
 require 'cesium_ion/tokens/index'
 require 'cesium_ion/tokens/show'
 require 'cesium_ion/tokens/destroy'
+require 'cesium_ion/tokens/update'
 
 
 module CesiumIon

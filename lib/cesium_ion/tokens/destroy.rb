@@ -1,6 +1,6 @@
 module CesiumIon
   module Tokens
-    class Show < CesiumIon::Base
+    class Destroy < CesiumIon::Base
       Params = Struct.new(
         :token_id,
         keyword_init: true
@@ -22,7 +22,7 @@ module CesiumIon
       end
 
       def api_path
-        "tokens/#{@params.token_id}"
+        "/tokens/#{@params.token_id}"
       end
 
       def endpoint
@@ -30,7 +30,7 @@ module CesiumIon
       end
 
       def request_type
-        'GET'
+        'DELETE'
       end
     end
   end

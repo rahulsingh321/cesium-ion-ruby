@@ -17,6 +17,10 @@ module CesiumIon
         "/tokens"
       end
 
+      def endpoint
+        'https://api.cesium.com/v2/'.freeze
+      end
+
       def request_type
         'GET'
       end
