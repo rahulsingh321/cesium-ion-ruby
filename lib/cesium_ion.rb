@@ -1,7 +1,6 @@
 require 'cesium_ion/base'
 require "cesium_ion/engine"
 
-require 'cesium_ion/base'
 require 'cesium_ion/assets/create'
 require 'cesium_ion/assets/index'
 require 'cesium_ion/assets/show'
@@ -12,10 +11,6 @@ require 'cesium_ion/archives/create'
 require 'cesium_ion/archives/index'
 require 'cesium_ion/archives/show'
 require 'cesium_ion/archives/destroy'
-
-require 'cesium_ion/exports/create'
-require 'cesium_ion/exports/index'
-require 'cesium_ion/exports/show'
 
 require 'cesium_ion/tokens/create'
 require 'cesium_ion/tokens/index'
