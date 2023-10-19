@@ -57,8 +57,7 @@ A ruby gem that provides ability to implement the [cesium ion rest apis](https:/
     CesiumIon::Tokens::Show.new({token_id: "03e9fea4-7f3d-484b-bfc2-ac46c286eb6b"}).response
     CesiumIon::Tokens::Create.new({name: "New token", scopes: ["assets:list"]}).response
     CesiumIon::Tokens::Destroy.new({token_id: "03e9fea4-7f3d-484b-bfc2-ac46c286eb6b"}).response
-    CesiumIon::Tokens::Update.new({token_id: "03e9fea4-7f3d-484b-bfc2-ac46c286eb6b", name: "Updated Token", scopes: [
-      "assets:list"]}).response
+    CesiumIon::Tokens::Update.new({token_id: "03e9fea4-7f3d-484b-bfc2-ac46c286eb6b", name: "Updated Token", scopes: ["assets:list"]}).response
     ```
 
 
