@@ -35,13 +35,13 @@ A ruby gem that provides ability to implement the [cesium ion rest apis](https:/
 
 ## **Example Usage**
   ### **Assets API**
-    ```ruby
+  ```ruby
     CesiumIon::Assets::Create.new({name: "New Asset", description: "The moon is gradually moving away from Earth. This phenomenon is known as lunar recession.", attribution: "Picture of a moon", type: "3DTILES", "options": {"sourceType": "3D_CAPTURE"}}).response
     CesiumIon::Assets::Index.new().response
     CesiumIon::Assets::Show.new({asset_id: 1814445}).response
     CesiumIon::Assets::Update.new({asset_id: 1814445, name: "New Asset 2", description: "Linar Recession", attribution: "Picture of a moon from space"}).response
     CesiumIon::Assets::Destroy.new({asset_id: 1777847}).response
-    ```
+  ```
 
   ### **Archieve API**
   ```ruby
@@ -52,13 +52,13 @@ A ruby gem that provides ability to implement the [cesium ion rest apis](https:/
   ```
 
   ### **Tokens API**
-    ```ruby
+  ```ruby
     CesiumIon::Tokens::Index.new().response
     CesiumIon::Tokens::Show.new({token_id: "03e9fea4-7f3d-484b-bfc2-ac46c286eb6b"}).response
     CesiumIon::Tokens::Create.new({name: "New token", scopes: ["assets:list"]}).response
     CesiumIon::Tokens::Destroy.new({token_id: "03e9fea4-7f3d-484b-bfc2-ac46c286eb6b"}).response
     CesiumIon::Tokens::Update.new({token_id: "03e9fea4-7f3d-484b-bfc2-ac46c286eb6b", name: "Updated Token", scopes: ["assets:list"]}).response
-    ```
+  ```
 
 
 ## **Installation**
