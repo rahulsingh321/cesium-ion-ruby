@@ -17,6 +17,7 @@ A ruby gem that provides ability to implement the [cesium ion rest apis](https:/
     - Show Asset
     - Update Asset
     - Destroy Asset
+    - Access Tile
   b) Archieve APIs
     - Create Archieves
     - Show Archieves
@@ -41,6 +42,7 @@ A ruby gem that provides ability to implement the [cesium ion rest apis](https:/
     CesiumIon::Assets::Show.new({asset_id: 1814445}).response
     CesiumIon::Assets::Update.new({asset_id: 1814445, name: "New Asset 2", description: "Linar Recession", attribution: "Picture of a moon from space"}).response
     CesiumIon::Assets::Destroy.new({asset_id: 1777847}).response
+    CesiumIon::Assets::AccessTile.new({asset_id: 1814445}).response
   ```
 
   ### **Archieve API**
